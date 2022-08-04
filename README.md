@@ -1,2 +1,2 @@
-# Schr-dingerExpertimentations
-Experimentations on solvin numeracally Schrödinger's Equation
+# SchrödingerExpertimentations
+Experimentations on solving numerically Schrödinger's Equation
