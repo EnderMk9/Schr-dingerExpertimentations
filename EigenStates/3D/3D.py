@@ -19,7 +19,7 @@ En = 24     # Number of energies to obtain
 #       h (float): Δx = Δy = Δz
 #       (a0,af) (floats): (x0,xf) = (y0,yf) = (z0,zf)
 # Returns:
-#       λ (En,) array              :  Eigenvalues
+#       λ (En,) array              : Eigenvalues
 #       χ (N+2,N+2,N+2,En) array   : Eigenvectors
 #       x,y,z (N+2,N+2,N+2) arrays : meshes
 
