@@ -50,8 +50,8 @@ def FiniteDiffDiag(r,h,a0,af):
             c[i] = 0
     for i in range(0,N**3):
         # These are the values of the 0th diagonal, we have to loop the coordinates to de-unravel the index i
-        a[i] = h*h*r(x[(i)%(N)+1],y[(floor((i)/(N))+1)%N +1],z[floor((i)/(N**2))+1])-4
-    s = diags([b,a,a,c,c,d,d],[0,1,-1,N,-N,N**2,-N**2])     # This function builds the sparse matrix out of the diagonals
+        a[i] = h*h*r(x[(i)%(N)+1],y[(floor((i)/(N))+1)%N +1],z[floor((i)/(N**2))+1])-6
+    s = diags([a,b,b,c,c,d,d],[0,1,-1,N,-N,N**2,-N**2])     # This function builds the sparse matrix out of the diagonals
     λ,ξ = eigs(s, which='LR', k = En)                       # This function computes the En eigenvalues with largest real part and their eigenvectors
     χ = np.zeros((x.size,y.size,z.size,En))                 # (N+2,N+2,N+2,En) in which we are going to de-unravel the eigenvectors, includes borders
     χ[1:x.size-1,1:y.size-1,1:z.size-1,:] = np.real(np.reshape(ξ,(x.size-2,y.size-2,z.size-2,En),order='F')) # de-unravel
